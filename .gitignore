@@ -1,0 +1,32 @@
+# Sensitive files
+credentials.json
+token.pickle
+whoop_token.json
+
+# Log files
+*.log
+sync.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Synced data files
+synced_workouts.json
+synced_sleep.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db 
