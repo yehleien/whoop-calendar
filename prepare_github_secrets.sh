@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "=== GitHub Actions Secret Values ==="
+echo ""
+echo "1. GOOGLE_CREDENTIALS:"
+echo "Copy the entire contents of credentials.json:"
+echo "----------------------------------------"
+cat credentials.json
+echo "----------------------------------------"
+echo ""
+echo "2. GOOGLE_TOKEN (base64 encoded):"
+echo "----------------------------------------"
+base64 -i token.pickle
+echo "----------------------------------------"
+echo ""
+echo "3. WHOOP_TOKEN:"
+echo "Copy the entire contents of whoop_token.json:"
+echo "----------------------------------------"
+cat whoop_token.json
+echo "----------------------------------------"
+echo ""
+echo "4. WHOOP_CLIENT_ID:"
+echo "1173921f-1774-46c9-a6a4-78052162a7dc"
+echo ""
+echo "5. WHOOP_CLIENT_SECRET:"
+echo "97e155a8a6c40212150d68dfa70b5eff3e4784b50bc19e444ec8bd349a4fadb7"
+echo ""
+echo "=== Instructions ==="
+echo "1. Create a new GitHub repository"
+echo "2. Upload all files from this directory"
+echo "3. Go to Settings → Secrets and variables → Actions"
+echo "4. Add each secret above with the exact names shown"
+echo "5. The workflow will run daily at 10:00 AM UTC (6:00 AM EST)" 
