@@ -13,12 +13,12 @@ Go to your repository → Settings → Secrets and variables → Actions, then a
 
 **Google Calendar Secrets:**
 - `GOOGLE_CREDENTIALS`: The contents of your `credentials.json` file
-- `GOOGLE_TOKEN`: The contents of your `token.pickle` file (base64 encoded)
+- `GOOGLE_TOKEN`: The base64-encoded contents of your `token.pickle` file
 
 **Whoop Secrets:**
 - `WHOOP_TOKEN`: The contents of your `whoop_token.json` file
-- `WHOOP_CLIENT_ID`: `1173921f-1774-46c9-a6a4-78052162a7dc`
-- `WHOOP_CLIENT_SECRET`: `97e155a8a6c40212150d68dfa70b5eff3e4784b50bc19e444ec8bd349a4fadb7`
+- `WHOOP_CLIENT_ID`: Your Whoop client ID
+- `WHOOP_CLIENT_SECRET`: Your Whoop client secret
 
 ### 3. How to get the secret values:
 
