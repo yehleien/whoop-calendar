@@ -384,9 +384,9 @@ def refresh_whoop_token():
     with open('whoop_token.json', 'r') as f:
         token_data = json.load(f)
     refresh_token = token_data['refresh_token']
-    # Use the client credentials from whoop_oauth.py
-    client_id = "1173921f-1774-46c9-a6a4-78052162a7dc"
-    client_secret = "97e155a8a6c40212150d68dfa70b5eff3e4784b50bc19e444ec8bd349a4fadb7"
+    # Prefer environment variables in CI; fall back to literals if present
+    client_id = os.getenv('WHOOP_CLIENT_ID', "1173921f-1774-46c9-a6a4-78052162a7dc")
+    client_secret = os.getenv('WHOOP_CLIENT_SECRET', "97e155a8a6c40212150d68dfa70b5eff3e4784b50bc19e444ec8bd349a4fadb7")
     token_url = 'https://api.prod.whoop.com/oauth/oauth2/token'
     data = {
         'grant_type': 'refresh_token',
