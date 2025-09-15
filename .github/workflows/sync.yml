@@ -19,11 +19,11 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.11'
         
     - name: Install dependencies
       run: |
-        pip install requests google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client; fi
         
     - name: Create credentials file
       run: |
@@ -39,7 +39,9 @@ jobs:
         
     - name: Run sync
       run: |
-        python sync.py --days 1
+        set -euo pipefail
+        export CI=1
+        python sync.py --days 1 2>&1 | tee -a sync.log
       env:
         WHOOP_CLIENT_ID: ${{ secrets.WHOOP_CLIENT_ID }}
         WHOOP_CLIENT_SECRET: ${{ secrets.WHOOP_CLIENT_SECRET }}
